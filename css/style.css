@@ -1,0 +1,135 @@
+  /* Import */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+  /* Reset */
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Darl-blue-desaturated: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 85%);
+
+  /* Fonts */
+  --Font-fs: 'Kumbh Sans', sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Dark-cyan);
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-position: -20vw -50vh, 40vw 55vh;
+  background-size: 60em, 80em;
+  font-family: var(--Font-fs);
+}
+
+.card {
+  width: 375px;
+  height: 380px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: .9375rem;
+  z-index: 1;
+}
+
+.bg-img {
+  width: 100%;
+  height: 30%;
+  position: relative;
+}
+
+.bg-img>img:nth-child(1) {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: .9375rem;
+  border-top-right-radius: .9375rem;
+}
+
+.bg-img>img:nth-child(2) {
+  position: absolute;
+  bottom: -3.3125rem;
+  left: 8.375rem;
+  padding: .3125rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.info {
+  margin-top: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .625rem;
+}
+
+.info>.name {
+  margin: 0px;
+  color: var(--Darl-blue-desaturated);
+  font-size: 1.3rem;
+}
+
+.info>.age {
+  font-size: 1.2rem;
+}
+
+.country {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.info>.age,
+.country,
+.stats>.results>span:nth-child(2) {
+  color: var(--Dark-grayish-blue);
+}
+
+hr {
+  height: 1px;
+  margin: 0px;
+  border: none;
+  background-color: var(--Dark-gray);
+}
+
+.stats {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.results>span:nth-child(1) {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    background-position: -115vw -30vh, 30vw 55vh;
+    background-size: 40em, 50em;
+  }
+
+  .card {
+    width: 330px;
+  }
+
+  .bg-img>img:nth-child(2) {
+    left: 7rem;
+  }
+}
